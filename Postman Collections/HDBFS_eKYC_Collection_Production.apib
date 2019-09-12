@@ -1,137 +1,512 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>APIMATIC - Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+FORMAT: 1A
+HOST: https://api.serviceurl.in/ekyc-api/aua
 
-    
-    
+# HDBFS eKYC Collection Production
+TODO: Add Description
 
-    
+# Group Misc
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+## Authentication [/authentication]
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+### Authentication API 2.5  HDBFS [POST]
+https://ssguat.serviceurl.in/ekyc-api/aua/kua-service/authentication
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" rel="stylesheet" />
-<link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/jquery.scrollbar/0.2.11/jquery.scrollbar.min.css"
-          integrity="sha256-nVXk5aDYc/D4r9OoqxZ5H6vpIAqAG5BhVuIdOihDN1c="
-          crossorigin="anonymous" />
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
++ Request (application/json)
+    + Headers
 
-<link href="/bundles/front-css?v=11O7jOwdtFxvmVBTuhI4jW7gL4oZccYpht3O4dmVJC41" rel="stylesheet"/>
-
-    <link href="/bundles/onboarding-css?v=m1CDG8GUR5u_P3QvyzJOWHlZKrHcnVPf442vvOhB4h41" rel="stylesheet"/>
+            institutionId:4016
+            aggregatorId:528
+            memberId:cpu_user@hdbfs.com
+            password:YyMkSzJpamI=
 
 
-    
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    + Attributes (Authentication API 2.5  HDBFS Request)
 
 
-    <!-- FAVICON START -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!-- FAVICON END -->
+    + Body
 
-</head>
-<body>
-    <div class="container onboarding-container">
-            <div class="onboarding-container-centered ">
-                
+            {
+                "auaCode": "0001790000",
+                "subAuaCode": "0001790000",
+                "aadharNumber": "924603845503",
+                "licenseKey": "MGEtq2yLca9bR3SnT1wUu8PJO2Hn9d-ceww164W5k8-H97tYnegJjeY",
+                "terminalId": "",
+                "transactionIdentifier": "HDBFS:123456734232323",
+                "uses": {
+                    "pi": "y",
+                    "pa": "y",
+                    "pfa": "n",
+                    "bio": "n",
+                    "pin": "n",
+                    "otp": "n"
+                },
+                "rc": "Y",
+                "metaData": {
+                    "rdsId": "",
+                    "rdsVer": "",
+                    "dpId": "",
+                    "dc": "",
+                    "mi": "",
+                    "mc": ""
+                },
+                "version": "2.5",
+                "personalIdentityData": {
+                    "timeStamp": "2018-07-03T15:21:01",
+                    "version": "2.0",
+                    "wadh": "",
+                    "demographicDetails": {
+                        "lang": null,
+                        "personalIdentity": {
+                            "matchStrategy": "E",
+                            "matchValue": "100",
+                            "name": "NIKHIL SANJAY NARKHEDKAR",
+                            "lname": null,
+                            "lmv": null,
+                            "gender": "M",
+                            "dateOfBirth": "1989-04-24",
+                            "dateOfBirthType": null,
+                            "age": null,
+                            "phone": null,
+                            "email": null
+                        },
+                        "personalAddress": {
+                            "matchStrategy": "E",
+                            "careOf": null,
+                            "houseNo": null,
+                            "street": null,
+                            "landMark": null,
+                            "location": null,
+                            "villageTownCity": null,
+                            "subDist": null,
+                            "dist": null,
+                            "state": null,
+                            "country": null,
+                            "postalCode": "411061",
+                            "postOffice": null
+                        },
+                        "personalFullAddress": {
+                            "matchStrategy": null,
+                            "matchValue": null,
+                            "addressValue": null,
+                            "lav": null,
+                            "lmv": null
+                        }
+                    }
+                }
+            }
 
 
-
-<header class="flex flex-col align-center">
-    <div class="icon">
-        <a href="/">
-            <img class="mx-auto d-block" alt="APIMATIC logo" title="Welcome to APIMATIC" src="/imgs/apimatic-logo.svg" />
-        </a>
-    </div>
-    <div class="content">
-        <p>Login to your account</p>
-    </div>
-
-</header>
-<section class="form-wrapper flex flex-col">
-
-<form action="/account/login?ReturnUrl=%2Fapi%2Ftransform%3Fformat%3Dapiblueprint%26apikey%3DmONZg6E9hVHp7-WXsHucCGl-lXLvzN0t9GGEQ_s1xgrILHdXq_d50wEd8ptizzQN" id="loginForm" method="post" novalidate="True" role="form"><input name="__RequestVerificationToken" type="hidden" value="KeC6NiZYCGduvq8IcKC3gv4bZMa03a-3L_Uw9c15zbwjr19f8HpeGGmdsAmPm0OPIRO90GdF8SLSiEhmYJ0oqZQx1jzNZiGVJV_McjcyTYQ1" /><div class="validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
-</ul></div>        <div class="form-group">
-            <label class="mb-1" for="signInInputEmail1">
-                Email
-            </label>
-            <input class="form-control form-control-sm" data-Validation="email" data-val="true" data-val-email="The Email Address field is not a valid e-mail address." data-val-required="Email is required" id="Email" name="Email" placeholder="Enter email here" required="required" tabindex="2" type="email" value="" />
-
-        </div>
-        <div class="form-group mb-0">
-            <label class="mb-1" for="signInInputPassword">
-                Password
-            </label>
-            <a class="forgot-password" href="/account/forgotpassword?Length=7">Forgot password?</a>
-            <input class="form-control extra-padding-right" data-title="Caps lock is on" data-toggle="tooltip" data-trigger="manual" data-val="true" data-val-required="Password is required" id="js-onboarding-password-field" name="Password" placeholder="Password" required="true" type="password" />
-            <i class="fa fa-eye onboarding-show-password-icon" id="js-onboarding-show-password-icon"></i>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input class="custom-control-input" data-val="true" data-val-required="The Remember me? field is required." id="customControlInline" name="RememberMe" tabindex="4" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />
-                Remember me
-            </label>
-        </div>
-        <button type="submit" class="btn btn-primary btn-sm btn-block" tabindex="5">
-            Login
-        </button>
-        <a href="/account/register" class="btn btn-white btn-sm btn-block" tabindex="6">
-            Sign Up
-        </a>
-</form></section>
-
-            </div>
-    </div>
-</body>
-</html>
++ Response 200 
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
+## Kyc [/kyc]
 
-<script src="https://cdn.rawgit.com/zenorocha/clipboard.js/master/dist/clipboard.min.js"></script>
+### OTP eKYC 2.5 .  HDBFS [POST]
+https://ssguat.serviceurl.in/ekyc-api/aua/kyc
 
-<script src="/bundles/front-js?v="></script>
++ Request (application/json)
+    + Headers
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-<script>
-    $.validate({
-        modules: 'date, security'
-    });
-</script>
-<script src="/bundles/onboarding-js?v=2h6We__p_84-tByynY6kDWiE-iuM8Pigjw1rycnNaQY1"></script>
+            institutionId:4016
+            aggregatorId:528
+            memberId:cpu_user@hdbfs.com
+            password:YyMkSzJpamI=
 
 
+    + Attributes (OTP eKYC 2.5 .  HDBFS Request)
+
+
+    + Body
+
+            {
+                "auaCode": "0001790000",
+                "subAuaCode": "0001790000",
+                "aadharNumber": "924603845503",
+                "licenseKey": "MGEtq2yLca9bR3SnT1wUu8PJO2Hn9d-ceww164W5k8-H97tYnegJjeY",
+                "transactionIdentifier": "UKC:HDBFS:999000222",
+                "terminalId": "",
+                "type": "A",
+                "uses": {
+                    "pi": "n",
+                    "pa": "n",
+                    "pfa": "n",
+                    "bio": "n",
+                    "pin": "n",
+                    "otp": "y"
+                },
+                "rc": "Y",
+                "metaData": {
+                    "rdsId": "",
+                    "rdsVer": "",
+                    "dpId": "",
+                    "dc": "",
+                    "mi": "",
+                    "mc": ""
+                },
+                "version": "2.5",
+                "personalIdentityData": {
+                    "timeStamp": "2018-07-10T12:44:01",
+                    "version": "2.0",
+                    "wadh": "",
+                    "pinValue": {
+                        "otp": "416723"
+                    }
+                },
+                "kycAttributes": {
+                    "ver": "2.5",
+                    "ra": "O",
+                    "rc": "Y",
+                    "lr": "N",
+                    "de": "N",
+                    "pfr": "N"
+                }
+            }
+
+
++ Response 200 
+
+
+
+
+## Otp [/otp]
+
+### Get OTP 2.5  HDBFS [POST]
+https://ssguat.serviceurl.in/ekyc-api/aua/otp
+
++ Request (application/json)
+    + Headers
+
+            institutionId:4016
+            aggregatorId:528
+            memberId:cpu_user@hdbfs.com
+            password:YyMkSzJpamI=
+
+
+    + Attributes (Get OTP 2.5  HDBFS Request)
+
+
+    + Body
+
+            {
+                "auaCode": "0001790000",
+                "subAuaCode": "0001790000",
+                "uid": "924603845503",
+                "licenseKey": "MGEtq2yLca9bR3SnT1wUu8PJO2Hn9d-ceww164W5k8-H97tYnegJjeY",
+                "txnIdentifier": "HDBFS:999000222",
+                "version": "2.5",
+                "type": "A",
+                "timeStamp": "2018-07-10T12:44:00",
+                "otpOptions": {
+                    "otpChannel": "01"
+                }
+            }
+
+
++ Response 200 
+
+
+
+
+## Bio Kyc [/bio-kyc]
+
+### Biometric eKYC  HDBFS [POST]
+https://ssguat.serviceurl.in/ekyc-api/aua/bio-kyc
+
++ Request (application/json)
+    + Headers
+
+            institutionId:3991
+            aggregatorId:528
+            memberId:cpu_user@hdbfs.com
+            password:YyMkSzJpamI=
+
+
+    + Attributes (Biometric eKYC  HDBFS Request)
+
+
+    + Body
+
+            {
+                "auaCode": "0001790000",
+                "subAuaCode": "0001790000",
+                "aadharNumber": "924603845503",
+                "licenseKey": "MGEtq2yLca9bR3SnT1wUu8PJO2Hn9d-ceww164W5k8-H97tYnegJjeY",
+                "transactionIdentifier": "UKC:HDBFS:77777",
+                "type": "A",
+                "terminalId": "registered",
+                "uses": {
+                    "pi": "n",
+                    "pa": "n",
+                    "pfa": "n",
+                    "bio": "y",
+                    "pin": "n",
+                    "otp": "n",
+                    "bt": "FMR"
+                },
+                "rc": "Y",
+                "metaData": {
+                    "rdsId": "PRECISION.WIN.001",
+                    "rdsVer": "1.2.0",
+                    "dpId": "PRECISION.PB",
+                    "dc": "0ffb4ef6-a3a3-477d-a2d0-6d359931e183",
+                    "mi": "PB510",
+                    "mc": "MIID5jCCAs6gAwIBAgIISe07Dj5xW+EwDQYJKoZIhvcNAQELBQAwgdgxNzA1BgNVBAMTLkRTIFByZWNpc2lvbiBCaW9tZXRyaWMgSW5kaWEgUHJpdmF0ZSBMaW1pdGVkIDExIzAhBgNVBDMTGjIyIEhhYmlidWxsYWggUm9hZCBUIE5hZ2FyMRAwDgYDVQQJEwdDaGVubmFpMRIwEAYDVQQIEwlUYW1pbG5hZHUxETAPBgNVBAsTCFNvZnR3YXJlMTIwMAYDVQQKEylQcmVjaXNpb24gQmlvbWV0cmljIEluZGlhIFByaXZhdGUgTGltaXRlZDELMAkGA1UEBhMCSU4wHhcNMTgwNjI1MTMxNTE5WhcNMTgwNzI1MTMxNTE5WjBQMRQwEgYDVQQKDAtQUkVDSVNJT05SRDESMBAGA1UEAwwJUHJlY2lzaW9uMRAwDgYDVQQHDAdDSEVOTkFJMRIwEAYDVQQLDAlCaW9tZXRyaWMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC2UqKdGdbQMIxq4KjPj2syM4PFDX13SQlXWGRIJS9/d4hYuRBrvv+WJ643dZYauCGtMtNE3jiR270uz1ckfARTGC7E164LxyQLaDKzBrlkBu+7RJu+c8l8d9L8z6Ep97nTZKKxZ4llCkzO/Jfc/cK+/Ou19JWBny7A7yS50OFNJHD3IXaYm8C31chaxd7Jja1YNpeUA5ogmTBbMyDRvcLebf0TEOzF9CH3zaeCUMarVadRvKbTFM4y4Lsos6ReOOpP/gUKl8zui++RGONNfjc8BsAfqUC8+85ZLeex6pco3ThUv3+CTH32VDEkqkFRUTLE33mgNrtC726YZHREwLqJAgMBAAGjOzA5MAkGA1UdEwQCMAAwCwYDVR0PBAQDAgGGMB8GA1UdIwQYMBaAFLU1sKRXC/kwcet03DIXvSIfcyhnMA0GCSqGSIb3DQEBCwUAA4IBAQAnI3Rg97rISqndI4n0R6gYj/PPlYuW0xPWxQCHyyg8SVzVUgs6oez7Doy+OY2v4xqcFyIMn+aPt/PUuWSSfVHv5SCzoq8AQPs8IQ7tdWEj89cbMYF3qn/F9fOT5Ddt4n34qJwNwR7H62FIlS8YSMFxtS2nWoG/67Kqf7E0tY47ol0AB3Ovobjwn5+bWnPAcGaL7thUh64ixttVBA5YpDZhbvmlmCfkvdzMly8aKj4Myc/NQf7XRqYHlmPqZJ38Z+qIu4djEke6jueeJ8cjHFdaisKDV5dVhaUPwK3GkTSCVlLIHFubZ+Lvn0oVqlQw6QQdAskETLOJ221W8TFZGCNN"
+                },
+                "version": "2.5",
+                "hmac": "oLv93YLGClweyUo0JFitYKyHUIL2pGHFGs15f7lgIrRjeKa6/rHxIpGb5j/KQfJD",
+                "skey": {
+                    "ci": "20201030",
+                    "value": "DQ7vZiVID8N2v8uqebIAUTL/ywzMdapshP/I9U9A4fAhfc1x4I2Ycf8qp/f63qHicnuegVWEeW/ZdvD2EUUdciMPdbBTCJ4ArOOdgr43UaSMfzWht0UAsO/bk4+RL+6eIAsSQph/hdqnIT+ng2zS6QRqBhYpoLPFWWIwv3cQgnDa2gp5HiPUGsZCVd4i5ZpJx8osMyf6YF8GpfIfpvuiR+bXVzL8MMyF378rml9RIx9jZeGGB9uhALcHzIL30Q6PBCtUbF74DJMEMGkzbUkst+qbkMdlnGQqOIQ4NF7Ul1Qb6I80z7FXBUNsH4mtUMwQERGu7MYO0C2ri4mweNdokQ=="
+                },
+                "data": {
+                    "type": "X",
+                    "value": "MjAxOC0wNi0yNlQxMzowNjozMGFZcS5sJvsVV1ocqcQ2ovlopi/8/gdgub0Y1IQ1djSPnf1k8bTsuQ+KLU6Qkdr4iFOS7lUmGuDOm8THcceFRaU7k/Fy6F59uPBIars/hWBF+Waif4deJB07YFUX3+v6FppKrRXPAX+n5SWUf6ldU1eyP1bP1IZcoA/Ohy5CuEJdxP+nvfz+qq9nKsS7u15/54Gbjc/W9rP37eRDM6n87TXldpxEXOkC14WRq92Wn0VzWlHz6l6xaHkqynXXoxUyJzA34qKJtn21uspJZnX7nnFNdJdk75OXWt4oXgZq9NOmDWRApUimHLnKcO0RzquY4V3E/NWIzBY3s9eiBZjd+pc3GTNBmupr9YAa3eqjRB0VwtxKzXcsqPryWUkPb3XqIukyZp6dwPtHMwit70GzelGzsC1eL0ufrsIRh3L6d74az0kyOUh+Cjyq0oYaaVtWVR0L9zzoKZ7OyQE9yV6dVe1lzLVGUUosatzQF7tT7b3SB7jZXJd1sJpma1CQeK9QQk8FSwLeEFRrScuOVkMciwlNEcooCuOrUvT5biXRT8lpdA8r/aKh3iLw9tFwFaY6vAyasVHOKICfZUVj3XFNuq4SFsbw4WfuY0P1C/dxC0B8WKLcjxw6hreEqJ3gj0JOCXN6Pk5McwwYY+1W8nkFkTpNOqJJvFzlVhjNTSKCGtzkQi/n6TZGY8XEdopc+0b6JPAlyWSmXtzkclm1Nqe7/oWgzP24wLf8enu34/wjBfDDunSEdoz7IQNmqn2lGGhY/b0wXVG/+7fxa2D8y+P9htjVpFuWfhfw11I7ylG6md3+HSIp4jMkEiVzEA1rvciAQrp9sjZAEpr/GfluNfqFY0VaGRzCREWy/4QWB/e1hAnmxpsjmSUvbr/QdZoC6YRvHcnN1d8pX85adqoidLI9FwSpaenpGUEjL+WAhKPAhjzDEfE66TYyVBZhLyiKRt8ZZMVzqaqAInRXdIPaTDMWNH7fUrip1bjPmGdZAEy4H81mtSLO7YhaG46R1SIZu/8XPi5kEXZnLz9IANMWc+oTcTW8wPa13mzhmK9GVu8H5D1UqLe8QP01NrFQBvZzPDy5hwLIQabEJLzCSHTd7opaUU2KkdThSbyE5C5G4lUpZMRaSGhfowymFxoZTanjyhdhJ1keodsjE4XTnuOYpCxnhg=="
+                },
+                "kycAttributes": {
+                    "ver": "2.5",
+                    "ra": "F",
+                    "rc": "Y",
+                    "lr": "N",
+                    "de": "Y",
+                    "pfr": "N"
+                }
+            }
+
+
++ Response 200 
+
+
+
+
+
+# Data Structures
+
+## Authentication API 2.5  HDBFS Request (object)
+
+
+### Properties
++ `auaCode` (string, required) 
++ `subAuaCode` (string, required) 
++ `aadharNumber` (string, required) 
++ `licenseKey` (string, required) 
++ `terminalId` (string, required) 
++ `transactionIdentifier` (string, required) 
++ `uses` (Uses, required) 
++ `rc` (string, required) 
++ `metaData` (MetaData, required) 
++ `version` (string, required) 
++ `personalIdentityData` (PersonalIdentityData, required) 
+
+
+## Uses (object)
+
+
+### Properties
++ `pi` (string, required) 
++ `pa` (string, required) 
++ `pfa` (string, required) 
++ `bio` (string, required) 
++ `pin` (string, required) 
++ `otp` (string, required) 
+
+
+## MetaData (object)
+
+
+### Properties
++ `rdsId` (string, required) 
++ `rdsVer` (string, required) 
++ `dpId` (string, required) 
++ `dc` (string, required) 
++ `mi` (string, required) 
++ `mc` (string, required) 
+
+
+## PersonalIdentityData (object)
+
+
+### Properties
++ `timeStamp` (string, required) 
++ `version` (string, required) 
++ `wadh` (string, required) 
++ `demographicDetails` (DemographicDetails, required) 
+
+
+## DemographicDetails (object)
+
+
+### Properties
++ `lang` (string, required, nullable) 
++ `personalIdentity` (PersonalIdentity, required) 
++ `personalAddress` (PersonalAddress, required) 
++ `personalFullAddress` (PersonalFullAddress, required) 
+
+
+## PersonalIdentity (object)
+
+
+### Properties
++ `matchStrategy` (string, required) 
++ `matchValue` (string, required) 
++ `name` (string, required) 
++ `lname` (string, required, nullable) 
++ `lmv` (string, required, nullable) 
++ `gender` (string, required) 
++ `dateOfBirth` (string, required) 
++ `dateOfBirthType` (string, required, nullable) 
++ `age` (string, required, nullable) 
++ `phone` (string, required, nullable) 
++ `email` (string, required, nullable) 
+
+
+## PersonalAddress (object)
+
+
+### Properties
++ `matchStrategy` (string, required) 
++ `careOf` (string, required, nullable) 
++ `houseNo` (string, required, nullable) 
++ `street` (string, required, nullable) 
++ `landMark` (string, required, nullable) 
++ `location` (string, required, nullable) 
++ `villageTownCity` (string, required, nullable) 
++ `subDist` (string, required, nullable) 
++ `dist` (string, required, nullable) 
++ `state` (string, required, nullable) 
++ `country` (string, required, nullable) 
++ `postalCode` (string, required) 
++ `postOffice` (string, required, nullable) 
+
+
+## PersonalFullAddress (object)
+
+
+### Properties
++ `matchStrategy` (string, required, nullable) 
++ `matchValue` (string, required, nullable) 
++ `addressValue` (string, required, nullable) 
++ `lav` (string, required, nullable) 
++ `lmv` (string, required, nullable) 
+
+
+## OTP eKYC 2.5 .  HDBFS Request (object)
+
+
+### Properties
++ `auaCode` (string, required) 
++ `subAuaCode` (string, required) 
++ `aadharNumber` (string, required) 
++ `licenseKey` (string, required) 
++ `transactionIdentifier` (string, required) 
++ `terminalId` (string, required) 
++ `type` (string, required) 
++ `uses` (Uses, required) 
++ `rc` (string, required) 
++ `metaData` (MetaData, required) 
++ `version` (string, required) 
++ `personalIdentityData` (PersonalIdentityData1, required) 
++ `kycAttributes` (KycAttributes, required) 
+
+
+## PersonalIdentityData1 (object)
+
+
+### Properties
++ `timeStamp` (string, required) 
++ `version` (string, required) 
++ `wadh` (string, required) 
++ `pinValue` (PinValue, required) 
+
+
+## PinValue (object)
+
+
+### Properties
++ `otp` (string, required) 
+
+
+## KycAttributes (object)
+
+
+### Properties
++ `ver` (string, required) 
++ `ra` (string, required) 
++ `rc` (string, required) 
++ `lr` (string, required) 
++ `de` (string, required) 
++ `pfr` (string, required) 
+
+
+## Get OTP 2.5  HDBFS Request (object)
+
+
+### Properties
++ `auaCode` (string, required) 
++ `subAuaCode` (string, required) 
++ `uid` (string, required) 
++ `licenseKey` (string, required) 
++ `txnIdentifier` (string, required) 
++ `version` (string, required) 
++ `type` (string, required) 
++ `timeStamp` (string, required) 
++ `otpOptions` (OtpOptions, required) 
+
+
+## OtpOptions (object)
+
+
+### Properties
++ `otpChannel` (string, required) 
+
+
+## Biometric eKYC  HDBFS Request (object)
+
+
+### Properties
++ `auaCode` (string, required) 
++ `subAuaCode` (string, required) 
++ `aadharNumber` (string, required) 
++ `licenseKey` (string, required) 
++ `transactionIdentifier` (string, required) 
++ `type` (string, required) 
++ `terminalId` (string, required) 
++ `uses` (Uses2, required) 
++ `rc` (string, required) 
++ `metaData` (MetaData, required) 
++ `version` (string, required) 
++ `hmac` (string, required) 
++ `skey` (Skey, required) 
++ `data` (Data, required) 
++ `kycAttributes` (KycAttributes, required) 
+
+
+## Uses2 (object)
+
+
+### Properties
++ `pi` (string, required) 
++ `pa` (string, required) 
++ `pfa` (string, required) 
++ `bio` (string, required) 
++ `pin` (string, required) 
++ `otp` (string, required) 
++ `bt` (string, required) 
+
+
+## Skey (object)
+
+
+### Properties
++ `ci` (string, required) 
++ `value` (string, required) 
+
+
+## Data (object)
+
+
+### Properties
++ `type` (string, required) 
++ `value` (string, required) 
 
