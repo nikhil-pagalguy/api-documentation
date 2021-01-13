@@ -1,512 +1,153 @@
-FORMAT: 1A
-HOST: https://api.serviceurl.in/ekyc-api/aua
-
-# HDBFS eKYC Collection Production
-
-
-# Group Misc
-
-## Authentication [/authentication]
-
-### Authentication API 2.5  HDBFS [POST]
-https://ssguat.serviceurl.in/ekyc-api/aua/kua-service/authentication
-
-+ Request (application/json)
-    + Headers
-
-            institutionId:4016
-            aggregatorId:528
-            memberId:cpu_user@hdbfs.com
-            password:YyMkSzJpamI=
-
-
-    + Attributes (Authentication API 2.5  HDBFS Request)
-
-
-    + Body
-
-            {
-                "auaCode": "0001790000",
-                "subAuaCode": "0001790000",
-                "aadharNumber": "924603845503",
-                "licenseKey": "MGEtq2yLca9bR3SnT1wUu8PJO2Hn9d-ceww164W5k8-H97tYnegJjeY",
-                "terminalId": "",
-                "transactionIdentifier": "HDBFS:123456734232323",
-                "uses": {
-                    "pi": "y",
-                    "pa": "y",
-                    "pfa": "n",
-                    "bio": "n",
-                    "pin": "n",
-                    "otp": "n"
-                },
-                "rc": "Y",
-                "metaData": {
-                    "rdsId": "",
-                    "rdsVer": "",
-                    "dpId": "",
-                    "dc": "",
-                    "mi": "",
-                    "mc": ""
-                },
-                "version": "2.5",
-                "personalIdentityData": {
-                    "timeStamp": "2018-07-03T15:21:01",
-                    "version": "2.0",
-                    "wadh": "",
-                    "demographicDetails": {
-                        "lang": null,
-                        "personalIdentity": {
-                            "matchStrategy": "E",
-                            "matchValue": "100",
-                            "name": "NIKHIL SANJAY NARKHEDKAR",
-                            "lname": null,
-                            "lmv": null,
-                            "gender": "M",
-                            "dateOfBirth": "1989-04-24",
-                            "dateOfBirthType": null,
-                            "age": null,
-                            "phone": null,
-                            "email": null
-                        },
-                        "personalAddress": {
-                            "matchStrategy": "E",
-                            "careOf": null,
-                            "houseNo": null,
-                            "street": null,
-                            "landMark": null,
-                            "location": null,
-                            "villageTownCity": null,
-                            "subDist": null,
-                            "dist": null,
-                            "state": null,
-                            "country": null,
-                            "postalCode": "411061",
-                            "postOffice": null
-                        },
-                        "personalFullAddress": {
-                            "matchStrategy": null,
-                            "matchValue": null,
-                            "addressValue": null,
-                            "lav": null,
-                            "lmv": null
-                        }
-                    }
-                }
-            }
-
-
-+ Response 200 
-
-
-
-
-## Kyc [/kyc]
-
-### OTP eKYC 2.5 .  HDBFS [POST]
-https://ssguat.serviceurl.in/ekyc-api/aua/kyc
-
-+ Request (application/json)
-    + Headers
-
-            institutionId:4016
-            aggregatorId:528
-            memberId:cpu_user@hdbfs.com
-            password:YyMkSzJpamI=
-
-
-    + Attributes (OTP eKYC 2.5 .  HDBFS Request)
-
-
-    + Body
-
-            {
-                "auaCode": "0001790000",
-                "subAuaCode": "0001790000",
-                "aadharNumber": "924603845503",
-                "licenseKey": "MGEtq2yLca9bR3SnT1wUu8PJO2Hn9d-ceww164W5k8-H97tYnegJjeY",
-                "transactionIdentifier": "UKC:HDBFS:999000222",
-                "terminalId": "",
-                "type": "A",
-                "uses": {
-                    "pi": "n",
-                    "pa": "n",
-                    "pfa": "n",
-                    "bio": "n",
-                    "pin": "n",
-                    "otp": "y"
-                },
-                "rc": "Y",
-                "metaData": {
-                    "rdsId": "",
-                    "rdsVer": "",
-                    "dpId": "",
-                    "dc": "",
-                    "mi": "",
-                    "mc": ""
-                },
-                "version": "2.5",
-                "personalIdentityData": {
-                    "timeStamp": "2018-07-10T12:44:01",
-                    "version": "2.0",
-                    "wadh": "",
-                    "pinValue": {
-                        "otp": "416723"
-                    }
-                },
-                "kycAttributes": {
-                    "ver": "2.5",
-                    "ra": "O",
-                    "rc": "Y",
-                    "lr": "N",
-                    "de": "N",
-                    "pfr": "N"
-                }
-            }
-
-
-+ Response 200 
-
-
-
-
-## Otp [/otp]
-
-### Get OTP 2.5  HDBFS [POST]
-https://ssguat.serviceurl.in/ekyc-api/aua/otp
-
-+ Request (application/json)
-    + Headers
-
-            institutionId:4016
-            aggregatorId:528
-            memberId:cpu_user@hdbfs.com
-            password:YyMkSzJpamI=
-
-
-    + Attributes (Get OTP 2.5  HDBFS Request)
-
-
-    + Body
-
-            {
-                "auaCode": "0001790000",
-                "subAuaCode": "0001790000",
-                "uid": "924603845503",
-                "licenseKey": "MGEtq2yLca9bR3SnT1wUu8PJO2Hn9d-ceww164W5k8-H97tYnegJjeY",
-                "txnIdentifier": "HDBFS:999000222",
-                "version": "2.5",
-                "type": "A",
-                "timeStamp": "2018-07-10T12:44:00",
-                "otpOptions": {
-                    "otpChannel": "01"
-                }
-            }
-
-
-+ Response 200 
-
-
-
-
-## Bio Kyc [/bio-kyc]
-
-### Biometric eKYC  HDBFS [POST]
-https://ssguat.serviceurl.in/ekyc-api/aua/bio-kyc
-
-+ Request (application/json)
-    + Headers
-
-            institutionId:3991
-            aggregatorId:528
-            memberId:cpu_user@hdbfs.com
-            password:YyMkSzJpamI=
-
-
-    + Attributes (Biometric eKYC  HDBFS Request)
-
-
-    + Body
-
-            {
-                "auaCode": "0001790000",
-                "subAuaCode": "0001790000",
-                "aadharNumber": "924603845503",
-                "licenseKey": "MGEtq2yLca9bR3SnT1wUu8PJO2Hn9d-ceww164W5k8-H97tYnegJjeY",
-                "transactionIdentifier": "UKC:HDBFS:77777",
-                "type": "A",
-                "terminalId": "registered",
-                "uses": {
-                    "pi": "n",
-                    "pa": "n",
-                    "pfa": "n",
-                    "bio": "y",
-                    "pin": "n",
-                    "otp": "n",
-                    "bt": "FMR"
-                },
-                "rc": "Y",
-                "metaData": {
-                    "rdsId": "PRECISION.WIN.001",
-                    "rdsVer": "1.2.0",
-                    "dpId": "PRECISION.PB",
-                    "dc": "0ffb4ef6-a3a3-477d-a2d0-6d359931e183",
-                    "mi": "PB510",
-                    "mc": "MIID5jCCAs6gAwIBAgIISe07Dj5xW+EwDQYJKoZIhvcNAQELBQAwgdgxNzA1BgNVBAMTLkRTIFByZWNpc2lvbiBCaW9tZXRyaWMgSW5kaWEgUHJpdmF0ZSBMaW1pdGVkIDExIzAhBgNVBDMTGjIyIEhhYmlidWxsYWggUm9hZCBUIE5hZ2FyMRAwDgYDVQQJEwdDaGVubmFpMRIwEAYDVQQIEwlUYW1pbG5hZHUxETAPBgNVBAsTCFNvZnR3YXJlMTIwMAYDVQQKEylQcmVjaXNpb24gQmlvbWV0cmljIEluZGlhIFByaXZhdGUgTGltaXRlZDELMAkGA1UEBhMCSU4wHhcNMTgwNjI1MTMxNTE5WhcNMTgwNzI1MTMxNTE5WjBQMRQwEgYDVQQKDAtQUkVDSVNJT05SRDESMBAGA1UEAwwJUHJlY2lzaW9uMRAwDgYDVQQHDAdDSEVOTkFJMRIwEAYDVQQLDAlCaW9tZXRyaWMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC2UqKdGdbQMIxq4KjPj2syM4PFDX13SQlXWGRIJS9/d4hYuRBrvv+WJ643dZYauCGtMtNE3jiR270uz1ckfARTGC7E164LxyQLaDKzBrlkBu+7RJu+c8l8d9L8z6Ep97nTZKKxZ4llCkzO/Jfc/cK+/Ou19JWBny7A7yS50OFNJHD3IXaYm8C31chaxd7Jja1YNpeUA5ogmTBbMyDRvcLebf0TEOzF9CH3zaeCUMarVadRvKbTFM4y4Lsos6ReOOpP/gUKl8zui++RGONNfjc8BsAfqUC8+85ZLeex6pco3ThUv3+CTH32VDEkqkFRUTLE33mgNrtC726YZHREwLqJAgMBAAGjOzA5MAkGA1UdEwQCMAAwCwYDVR0PBAQDAgGGMB8GA1UdIwQYMBaAFLU1sKRXC/kwcet03DIXvSIfcyhnMA0GCSqGSIb3DQEBCwUAA4IBAQAnI3Rg97rISqndI4n0R6gYj/PPlYuW0xPWxQCHyyg8SVzVUgs6oez7Doy+OY2v4xqcFyIMn+aPt/PUuWSSfVHv5SCzoq8AQPs8IQ7tdWEj89cbMYF3qn/F9fOT5Ddt4n34qJwNwR7H62FIlS8YSMFxtS2nWoG/67Kqf7E0tY47ol0AB3Ovobjwn5+bWnPAcGaL7thUh64ixttVBA5YpDZhbvmlmCfkvdzMly8aKj4Myc/NQf7XRqYHlmPqZJ38Z+qIu4djEke6jueeJ8cjHFdaisKDV5dVhaUPwK3GkTSCVlLIHFubZ+Lvn0oVqlQw6QQdAskETLOJ221W8TFZGCNN"
-                },
-                "version": "2.5",
-                "hmac": "oLv93YLGClweyUo0JFitYKyHUIL2pGHFGs15f7lgIrRjeKa6/rHxIpGb5j/KQfJD",
-                "skey": {
-                    "ci": "20201030",
-                    "value": "DQ7vZiVID8N2v8uqebIAUTL/ywzMdapshP/I9U9A4fAhfc1x4I2Ycf8qp/f63qHicnuegVWEeW/ZdvD2EUUdciMPdbBTCJ4ArOOdgr43UaSMfzWht0UAsO/bk4+RL+6eIAsSQph/hdqnIT+ng2zS6QRqBhYpoLPFWWIwv3cQgnDa2gp5HiPUGsZCVd4i5ZpJx8osMyf6YF8GpfIfpvuiR+bXVzL8MMyF378rml9RIx9jZeGGB9uhALcHzIL30Q6PBCtUbF74DJMEMGkzbUkst+qbkMdlnGQqOIQ4NF7Ul1Qb6I80z7FXBUNsH4mtUMwQERGu7MYO0C2ri4mweNdokQ=="
-                },
-                "data": {
-                    "type": "X",
-                    "value": "MjAxOC0wNi0yNlQxMzowNjozMGFZcS5sJvsVV1ocqcQ2ovlopi/8/gdgub0Y1IQ1djSPnf1k8bTsuQ+KLU6Qkdr4iFOS7lUmGuDOm8THcceFRaU7k/Fy6F59uPBIars/hWBF+Waif4deJB07YFUX3+v6FppKrRXPAX+n5SWUf6ldU1eyP1bP1IZcoA/Ohy5CuEJdxP+nvfz+qq9nKsS7u15/54Gbjc/W9rP37eRDM6n87TXldpxEXOkC14WRq92Wn0VzWlHz6l6xaHkqynXXoxUyJzA34qKJtn21uspJZnX7nnFNdJdk75OXWt4oXgZq9NOmDWRApUimHLnKcO0RzquY4V3E/NWIzBY3s9eiBZjd+pc3GTNBmupr9YAa3eqjRB0VwtxKzXcsqPryWUkPb3XqIukyZp6dwPtHMwit70GzelGzsC1eL0ufrsIRh3L6d74az0kyOUh+Cjyq0oYaaVtWVR0L9zzoKZ7OyQE9yV6dVe1lzLVGUUosatzQF7tT7b3SB7jZXJd1sJpma1CQeK9QQk8FSwLeEFRrScuOVkMciwlNEcooCuOrUvT5biXRT8lpdA8r/aKh3iLw9tFwFaY6vAyasVHOKICfZUVj3XFNuq4SFsbw4WfuY0P1C/dxC0B8WKLcjxw6hreEqJ3gj0JOCXN6Pk5McwwYY+1W8nkFkTpNOqJJvFzlVhjNTSKCGtzkQi/n6TZGY8XEdopc+0b6JPAlyWSmXtzkclm1Nqe7/oWgzP24wLf8enu34/wjBfDDunSEdoz7IQNmqn2lGGhY/b0wXVG/+7fxa2D8y+P9htjVpFuWfhfw11I7ylG6md3+HSIp4jMkEiVzEA1rvciAQrp9sjZAEpr/GfluNfqFY0VaGRzCREWy/4QWB/e1hAnmxpsjmSUvbr/QdZoC6YRvHcnN1d8pX85adqoidLI9FwSpaenpGUEjL+WAhKPAhjzDEfE66TYyVBZhLyiKRt8ZZMVzqaqAInRXdIPaTDMWNH7fUrip1bjPmGdZAEy4H81mtSLO7YhaG46R1SIZu/8XPi5kEXZnLz9IANMWc+oTcTW8wPa13mzhmK9GVu8H5D1UqLe8QP01NrFQBvZzPDy5hwLIQabEJLzCSHTd7opaUU2KkdThSbyE5C5G4lUpZMRaSGhfowymFxoZTanjyhdhJ1keodsjE4XTnuOYpCxnhg=="
-                },
-                "kycAttributes": {
-                    "ver": "2.5",
-                    "ra": "F",
-                    "rc": "Y",
-                    "lr": "N",
-                    "de": "Y",
-                    "pfr": "N"
-                }
-            }
-
-
-+ Response 200 
-
-
-
-
-
-# Data Structures
-
-## Authentication API 2.5  HDBFS Request (object)
-
-
-### Properties
-+ `auaCode` (string, required) 
-+ `subAuaCode` (string, required) 
-+ `aadharNumber` (string, required) 
-+ `licenseKey` (string, required) 
-+ `terminalId` (string, required) 
-+ `transactionIdentifier` (string, required) 
-+ `uses` (Uses, required) 
-+ `rc` (string, required) 
-+ `metaData` (MetaData, required) 
-+ `version` (string, required) 
-+ `personalIdentityData` (PersonalIdentityData, required) 
-
-
-## Uses (object)
-
-
-### Properties
-+ `pi` (string, required) 
-+ `pa` (string, required) 
-+ `pfa` (string, required) 
-+ `bio` (string, required) 
-+ `pin` (string, required) 
-+ `otp` (string, required) 
-
-
-## MetaData (object)
-
-
-### Properties
-+ `rdsId` (string, required) 
-+ `rdsVer` (string, required) 
-+ `dpId` (string, required) 
-+ `dc` (string, required) 
-+ `mi` (string, required) 
-+ `mc` (string, required) 
-
-
-## PersonalIdentityData (object)
-
-
-### Properties
-+ `timeStamp` (string, required) 
-+ `version` (string, required) 
-+ `wadh` (string, required) 
-+ `demographicDetails` (DemographicDetails, required) 
-
-
-## DemographicDetails (object)
-
-
-### Properties
-+ `lang` (string, required, nullable) 
-+ `personalIdentity` (PersonalIdentity, required) 
-+ `personalAddress` (PersonalAddress, required) 
-+ `personalFullAddress` (PersonalFullAddress, required) 
-
-
-## PersonalIdentity (object)
-
-
-### Properties
-+ `matchStrategy` (string, required) 
-+ `matchValue` (string, required) 
-+ `name` (string, required) 
-+ `lname` (string, required, nullable) 
-+ `lmv` (string, required, nullable) 
-+ `gender` (string, required) 
-+ `dateOfBirth` (string, required) 
-+ `dateOfBirthType` (string, required, nullable) 
-+ `age` (string, required, nullable) 
-+ `phone` (string, required, nullable) 
-+ `email` (string, required, nullable) 
-
-
-## PersonalAddress (object)
-
-
-### Properties
-+ `matchStrategy` (string, required) 
-+ `careOf` (string, required, nullable) 
-+ `houseNo` (string, required, nullable) 
-+ `street` (string, required, nullable) 
-+ `landMark` (string, required, nullable) 
-+ `location` (string, required, nullable) 
-+ `villageTownCity` (string, required, nullable) 
-+ `subDist` (string, required, nullable) 
-+ `dist` (string, required, nullable) 
-+ `state` (string, required, nullable) 
-+ `country` (string, required, nullable) 
-+ `postalCode` (string, required) 
-+ `postOffice` (string, required, nullable) 
-
-
-## PersonalFullAddress (object)
-
-
-### Properties
-+ `matchStrategy` (string, required, nullable) 
-+ `matchValue` (string, required, nullable) 
-+ `addressValue` (string, required, nullable) 
-+ `lav` (string, required, nullable) 
-+ `lmv` (string, required, nullable) 
-
-
-## OTP eKYC 2.5 .  HDBFS Request (object)
-
-
-### Properties
-+ `auaCode` (string, required) 
-+ `subAuaCode` (string, required) 
-+ `aadharNumber` (string, required) 
-+ `licenseKey` (string, required) 
-+ `transactionIdentifier` (string, required) 
-+ `terminalId` (string, required) 
-+ `type` (string, required) 
-+ `uses` (Uses, required) 
-+ `rc` (string, required) 
-+ `metaData` (MetaData, required) 
-+ `version` (string, required) 
-+ `personalIdentityData` (PersonalIdentityData1, required) 
-+ `kycAttributes` (KycAttributes, required) 
-
-
-## PersonalIdentityData1 (object)
-
-
-### Properties
-+ `timeStamp` (string, required) 
-+ `version` (string, required) 
-+ `wadh` (string, required) 
-+ `pinValue` (PinValue, required) 
-
-
-## PinValue (object)
-
-
-### Properties
-+ `otp` (string, required) 
-
-
-## KycAttributes (object)
-
-
-### Properties
-+ `ver` (string, required) 
-+ `ra` (string, required) 
-+ `rc` (string, required) 
-+ `lr` (string, required) 
-+ `de` (string, required) 
-+ `pfr` (string, required) 
-
-
-## Get OTP 2.5  HDBFS Request (object)
-
-
-### Properties
-+ `auaCode` (string, required) 
-+ `subAuaCode` (string, required) 
-+ `uid` (string, required) 
-+ `licenseKey` (string, required) 
-+ `txnIdentifier` (string, required) 
-+ `version` (string, required) 
-+ `type` (string, required) 
-+ `timeStamp` (string, required) 
-+ `otpOptions` (OtpOptions, required) 
-
-
-## OtpOptions (object)
-
-
-### Properties
-+ `otpChannel` (string, required) 
-
-
-## Biometric eKYC  HDBFS Request (object)
-
-
-### Properties
-+ `auaCode` (string, required) 
-+ `subAuaCode` (string, required) 
-+ `aadharNumber` (string, required) 
-+ `licenseKey` (string, required) 
-+ `transactionIdentifier` (string, required) 
-+ `type` (string, required) 
-+ `terminalId` (string, required) 
-+ `uses` (Uses2, required) 
-+ `rc` (string, required) 
-+ `metaData` (MetaData, required) 
-+ `version` (string, required) 
-+ `hmac` (string, required) 
-+ `skey` (Skey, required) 
-+ `data` (Data, required) 
-+ `kycAttributes` (KycAttributes, required) 
-
-
-## Uses2 (object)
-
-
-### Properties
-+ `pi` (string, required) 
-+ `pa` (string, required) 
-+ `pfa` (string, required) 
-+ `bio` (string, required) 
-+ `pin` (string, required) 
-+ `otp` (string, required) 
-+ `bt` (string, required) 
-
-
-## Skey (object)
-
-
-### Properties
-+ `ci` (string, required) 
-+ `value` (string, required) 
-
-
-## Data (object)
-
-
-### Properties
-+ `type` (string, required) 
-+ `value` (string, required) 
-
+{
+  "info": {
+    "_postman_id": "2343712-a2904a33-a4db-217b-7372-0a54b89e953d",
+    "name": "HDBFS eKYC Collection Production",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication API 2.5 - HDBFS",
+      "_postman_id": "2343712-52f418fa-5980-9444-780e-afbcc444e9bb",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "institutionId",
+            "value": "4016"
+          },
+          {
+            "key": "aggregatorId",
+            "value": "528"
+          },
+          {
+            "key": "memberId",
+            "value": "cpu_user@hdbfs.com"
+          },
+          {
+            "key": "password",
+            "value": "YyMkSzJpamI="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n \"auaCode\": \"0001790000\",\n \"subAuaCode\": \"0001790000\",\n \"aadharNumber\": \"924603845503\",\n \"licenseKey\": \"MGEtq2yLca9bR3SnT1wUu8PJO2Hn9d-ceww164W5k8-H97tYnegJjeY\",\n \"terminalId\":\"\",\n \"transactionIdentifier\": \"HDBFS:123456734232323\",\n \"uses\": {\n   \"pi\": \"y\",\n   \"pa\": \"y\",\n   \"pfa\": \"n\",\n   \"bio\": \"n\",\n   \"pin\": \"n\",\n   \"otp\": \"n\"\n },\n \"rc\": \"Y\",\n \"metaData\": {\n   \"rdsId\": \"\",\n   \"rdsVer\": \"\",\n   \"dpId\": \"\",\n   \"dc\": \"\",\n   \"mi\": \"\",\n   \"mc\": \"\"\n },\n \"version\": \"2.5\",\n \"personalIdentityData\": {\n   \"timeStamp\": \"2018-07-03T15:21:01\",\n   \"version\": \"2.0\",\n   \"wadh\": \"\",\n   \"demographicDetails\": {\n     \"lang\": null,\n     \"personalIdentity\": {\n       \"matchStrategy\": \"E\",\n       \"matchValue\": \"100\",\n       \"name\": \"NIKHIL SANJAY NARKHEDKAR\",\n       \"lname\": null,\n       \"lmv\": null,\n       \"gender\": \"M\",\n       \"dateOfBirth\": \"1989-04-24\",\n       \"dateOfBirthType\": null,\n       \"age\": null,\n       \"phone\": null,\n       \"email\": null\n     },\n     \"personalAddress\": {\n       \"matchStrategy\": \"E\",\n       \"careOf\": null,\n       \"houseNo\": null,\n       \"street\": null,\n       \"landMark\": null,\n       \"location\": null,\n       \"villageTownCity\": null,\n       \"subDist\": null,\n       \"dist\": null,\n       \"state\": null,\n       \"country\": null,\n       \"postalCode\": \"411061\",\n       \"postOffice\": null\n     },\n     \"personalFullAddress\": {\n       \"matchStrategy\": null,\n       \"matchValue\": null,\n       \"addressValue\": null,\n       \"lav\": null,\n       \"lmv\": null\n     }\n   }\n }\n}"
+        },
+        "url": "https://api.serviceurl.in/ekyc-api/aua/authentication",
+        "description": "https://ssguat.serviceurl.in/ekyc-api/aua/kua-service/authentication"
+      },
+      "response": []
+    },
+    {
+      "name": "OTP eKYC 2.5 . -- HDBFS",
+      "_postman_id": "2343712-88bca3c0-2447-9128-586a-264d03a32df3",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "institutionId",
+            "value": "4016"
+          },
+          {
+            "key": "aggregatorId",
+            "value": "528"
+          },
+          {
+            "key": "memberId",
+            "value": "cpu_user@hdbfs.com"
+          },
+          {
+            "key": "password",
+            "value": "YyMkSzJpamI="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\"auaCode\": \"0001790000\",\n\"subAuaCode\": \"0001790000\",\n\"aadharNumber\": \"924603845503\",\n\"licenseKey\": \"MGEtq2yLca9bR3SnT1wUu8PJO2Hn9d-ceww164W5k8-H97tYnegJjeY\",\n\"transactionIdentifier\": \"UKC:HDBFS:999000222\",\n\"terminalId\":\"\",\n\"type\":\"A\",\n\"uses\": {\n  \"pi\": \"n\",\n  \"pa\": \"n\",\n  \"pfa\": \"n\",\n  \"bio\": \"n\",\n  \"pin\": \"n\",\n  \"otp\": \"y\"\n},\n\"rc\": \"Y\",\n\"metaData\": {\n  \"rdsId\": \"\",\n  \"rdsVer\": \"\",\n  \"dpId\": \"\",\n  \"dc\": \"\",\n  \"mi\": \"\",\n  \"mc\": \"\"\n},\n\"version\": \"2.5\",\n\"personalIdentityData\": {\n    \"timeStamp\": \"2018-07-10T12:44:01\",\n    \"version\" : \"2.0\",\n    \"wadh\" : \"\",\n  \"pinValue\": {\n    \"otp\": \"416723\"\n  }\n},\n\"kycAttributes\": {\n  \"ver\": \"2.5\",\n  \"ra\": \"O\",\n  \"rc\": \"Y\",\n  \"lr\": \"N\",\n  \"de\": \"N\",\n  \"pfr\": \"N\"\n}\n}"
+        },
+        "url": "https://api.serviceurl.in/ekyc-api/aua/kyc",
+        "description": "https://ssguat.serviceurl.in/ekyc-api/aua/kyc"
+      },
+      "response": []
+    },
+    {
+      "name": "Get OTP 2.5 -- HDBFS",
+      "_postman_id": "2343712-e3ecc65e-74c1-7957-e260-c0fe2a3446de",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "institutionId",
+            "value": "4016"
+          },
+          {
+            "key": "aggregatorId",
+            "value": "528"
+          },
+          {
+            "key": "memberId",
+            "value": "cpu_user@hdbfs.com"
+          },
+          {
+            "key": "password",
+            "value": "YyMkSzJpamI="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"auaCode\" : \"0001790000\",\n    \"subAuaCode\": \"0001790000\",\n    \"uid\" : \"924603845503\",\n    \"licenseKey\" : \"MGEtq2yLca9bR3SnT1wUu8PJO2Hn9d-ceww164W5k8-H97tYnegJjeY\",\n    \"txnIdentifier\" : \"HDBFS:999000222\",\n    \"version\" : \"2.5\",\n    \"type\" : \"A\",\n    \"timeStamp\" : \"2018-07-10T12:44:00\",\n    \"otpOptions\" : {\n        \"otpChannel\" : \"01\"\n    }\n}"
+        },
+        "url": "https://api.serviceurl.in/ekyc-api/aua/otp",
+        "description": "https://ssguat.serviceurl.in/ekyc-api/aua/otp"
+      },
+      "response": []
+    },
+    {
+      "name": "Biometric eKYC - HDBFS",
+      "_postman_id": "2343712-78f207be-7925-2fac-45f9-29e7a51d4f33",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "institutionId",
+            "value": "3991"
+          },
+          {
+            "key": "aggregatorId",
+            "value": "528"
+          },
+          {
+            "key": "memberId",
+            "value": "cpu_user@hdbfs.com"
+          },
+          {
+            "key": "password",
+            "value": "YyMkSzJpamI="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\"auaCode\": \"0001790000\",\n\"subAuaCode\": \"0001790000\",\n\"aadharNumber\": \"924603845503\",\n\"licenseKey\": \"MGEtq2yLca9bR3SnT1wUu8PJO2Hn9d-ceww164W5k8-H97tYnegJjeY\",\n \"transactionIdentifier\": \"UKC:HDBFS:77777\",\n \"type\": \"A\",\n \"terminalId\": \"registered\",\n \"uses\": {\n   \"pi\": \"n\",\n   \"pa\": \"n\",\n   \"pfa\": \"n\",\n   \"bio\": \"y\",\n   \"pin\": \"n\",\n   \"otp\": \"n\",\n   \"bt\": \"FMR\"\n },\n \"rc\": \"Y\",\n \"metaData\": {\n   \"rdsId\": \"PRECISION.WIN.001\",\n   \"rdsVer\": \"1.2.0\",\n   \"dpId\": \"PRECISION.PB\",\n   \"dc\": \"0ffb4ef6-a3a3-477d-a2d0-6d359931e183\",\n   \"mi\": \"PB510\",\n   \"mc\": \"MIID5jCCAs6gAwIBAgIISe07Dj5xW+EwDQYJKoZIhvcNAQELBQAwgdgxNzA1BgNVBAMTLkRTIFByZWNpc2lvbiBCaW9tZXRyaWMgSW5kaWEgUHJpdmF0ZSBMaW1pdGVkIDExIzAhBgNVBDMTGjIyIEhhYmlidWxsYWggUm9hZCBUIE5hZ2FyMRAwDgYDVQQJEwdDaGVubmFpMRIwEAYDVQQIEwlUYW1pbG5hZHUxETAPBgNVBAsTCFNvZnR3YXJlMTIwMAYDVQQKEylQcmVjaXNpb24gQmlvbWV0cmljIEluZGlhIFByaXZhdGUgTGltaXRlZDELMAkGA1UEBhMCSU4wHhcNMTgwNjI1MTMxNTE5WhcNMTgwNzI1MTMxNTE5WjBQMRQwEgYDVQQKDAtQUkVDSVNJT05SRDESMBAGA1UEAwwJUHJlY2lzaW9uMRAwDgYDVQQHDAdDSEVOTkFJMRIwEAYDVQQLDAlCaW9tZXRyaWMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC2UqKdGdbQMIxq4KjPj2syM4PFDX13SQlXWGRIJS9/d4hYuRBrvv+WJ643dZYauCGtMtNE3jiR270uz1ckfARTGC7E164LxyQLaDKzBrlkBu+7RJu+c8l8d9L8z6Ep97nTZKKxZ4llCkzO/Jfc/cK+/Ou19JWBny7A7yS50OFNJHD3IXaYm8C31chaxd7Jja1YNpeUA5ogmTBbMyDRvcLebf0TEOzF9CH3zaeCUMarVadRvKbTFM4y4Lsos6ReOOpP/gUKl8zui++RGONNfjc8BsAfqUC8+85ZLeex6pco3ThUv3+CTH32VDEkqkFRUTLE33mgNrtC726YZHREwLqJAgMBAAGjOzA5MAkGA1UdEwQCMAAwCwYDVR0PBAQDAgGGMB8GA1UdIwQYMBaAFLU1sKRXC/kwcet03DIXvSIfcyhnMA0GCSqGSIb3DQEBCwUAA4IBAQAnI3Rg97rISqndI4n0R6gYj/PPlYuW0xPWxQCHyyg8SVzVUgs6oez7Doy+OY2v4xqcFyIMn+aPt/PUuWSSfVHv5SCzoq8AQPs8IQ7tdWEj89cbMYF3qn/F9fOT5Ddt4n34qJwNwR7H62FIlS8YSMFxtS2nWoG/67Kqf7E0tY47ol0AB3Ovobjwn5+bWnPAcGaL7thUh64ixttVBA5YpDZhbvmlmCfkvdzMly8aKj4Myc/NQf7XRqYHlmPqZJ38Z+qIu4djEke6jueeJ8cjHFdaisKDV5dVhaUPwK3GkTSCVlLIHFubZ+Lvn0oVqlQw6QQdAskETLOJ221W8TFZGCNN\"\n },\n \"version\": \"2.5\",\n \"hmac\": \"oLv93YLGClweyUo0JFitYKyHUIL2pGHFGs15f7lgIrRjeKa6/rHxIpGb5j/KQfJD\",\n \"skey\": {\n   \"ci\": \"20201030\",\n   \"value\": \"DQ7vZiVID8N2v8uqebIAUTL/ywzMdapshP/I9U9A4fAhfc1x4I2Ycf8qp/f63qHicnuegVWEeW/ZdvD2EUUdciMPdbBTCJ4ArOOdgr43UaSMfzWht0UAsO/bk4+RL+6eIAsSQph/hdqnIT+ng2zS6QRqBhYpoLPFWWIwv3cQgnDa2gp5HiPUGsZCVd4i5ZpJx8osMyf6YF8GpfIfpvuiR+bXVzL8MMyF378rml9RIx9jZeGGB9uhALcHzIL30Q6PBCtUbF74DJMEMGkzbUkst+qbkMdlnGQqOIQ4NF7Ul1Qb6I80z7FXBUNsH4mtUMwQERGu7MYO0C2ri4mweNdokQ==\"\n },\n \"data\": {\n   \"type\": \"X\",\n   \"value\": \"MjAxOC0wNi0yNlQxMzowNjozMGFZcS5sJvsVV1ocqcQ2ovlopi/8/gdgub0Y1IQ1djSPnf1k8bTsuQ+KLU6Qkdr4iFOS7lUmGuDOm8THcceFRaU7k/Fy6F59uPBIars/hWBF+Waif4deJB07YFUX3+v6FppKrRXPAX+n5SWUf6ldU1eyP1bP1IZcoA/Ohy5CuEJdxP+nvfz+qq9nKsS7u15/54Gbjc/W9rP37eRDM6n87TXldpxEXOkC14WRq92Wn0VzWlHz6l6xaHkqynXXoxUyJzA34qKJtn21uspJZnX7nnFNdJdk75OXWt4oXgZq9NOmDWRApUimHLnKcO0RzquY4V3E/NWIzBY3s9eiBZjd+pc3GTNBmupr9YAa3eqjRB0VwtxKzXcsqPryWUkPb3XqIukyZp6dwPtHMwit70GzelGzsC1eL0ufrsIRh3L6d74az0kyOUh+Cjyq0oYaaVtWVR0L9zzoKZ7OyQE9yV6dVe1lzLVGUUosatzQF7tT7b3SB7jZXJd1sJpma1CQeK9QQk8FSwLeEFRrScuOVkMciwlNEcooCuOrUvT5biXRT8lpdA8r/aKh3iLw9tFwFaY6vAyasVHOKICfZUVj3XFNuq4SFsbw4WfuY0P1C/dxC0B8WKLcjxw6hreEqJ3gj0JOCXN6Pk5McwwYY+1W8nkFkTpNOqJJvFzlVhjNTSKCGtzkQi/n6TZGY8XEdopc+0b6JPAlyWSmXtzkclm1Nqe7/oWgzP24wLf8enu34/wjBfDDunSEdoz7IQNmqn2lGGhY/b0wXVG/+7fxa2D8y+P9htjVpFuWfhfw11I7ylG6md3+HSIp4jMkEiVzEA1rvciAQrp9sjZAEpr/GfluNfqFY0VaGRzCREWy/4QWB/e1hAnmxpsjmSUvbr/QdZoC6YRvHcnN1d8pX85adqoidLI9FwSpaenpGUEjL+WAhKPAhjzDEfE66TYyVBZhLyiKRt8ZZMVzqaqAInRXdIPaTDMWNH7fUrip1bjPmGdZAEy4H81mtSLO7YhaG46R1SIZu/8XPi5kEXZnLz9IANMWc+oTcTW8wPa13mzhmK9GVu8H5D1UqLe8QP01NrFQBvZzPDy5hwLIQabEJLzCSHTd7opaUU2KkdThSbyE5C5G4lUpZMRaSGhfowymFxoZTanjyhdhJ1keodsjE4XTnuOYpCxnhg==\"\n },\n \"kycAttributes\": {\n   \"ver\": \"2.5\",\n   \"ra\": \"F\",\n   \"rc\": \"Y\",\n   \"lr\": \"N\",\n   \"de\": \"Y\",\n   \"pfr\": \"N\"\n }\n}"
+        },
+        "url": "https://api.serviceurl.in/ekyc-api/aua/bio-kyc",
+        "description": "https://ssguat.serviceurl.in/ekyc-api/aua/bio-kyc"
+      },
+      "response": []
+    }
+  ]
+}
